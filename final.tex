@@ -219,17 +219,6 @@ If $Y\sim F$, the $r$th \emph{quantile} is $Q(r)=\min\{ x\mid F(x)\geq r\}$. The
 
 \subsection{Finding the MLE}
 
-The steps you can carry out to find the MLE of $\theta$ given the data $\vec y$:
-\begin{enumerate}
-    \item Find $L(\theta)$ and take logs to find $\ell(\theta)$.
-    \item Find $\ell'(\theta)$, set it to zero, and solve for $\theta$ (call this $\hat{\theta}$). 
-    \item Find $\ell''(\theta)$ and check that $\ell''(\hat{\theta})<0$.
-    \item With this, $\hat{\theta}$ is your maximum likelihood estimate!
-    \item To find the maximum likelihood estimator, convert the $y_j$'s into $Y_j$'s.
-\end{enumerate}
-
-
-
 \subsection{MLE Invariance}
 If $g$ is injective and $\hat\theta$ is the MLE of $\theta$, then $g(\hat\theta)$ is the MLE of $g(\theta)$. After all, maximizing $L(\psi)$ is equivalent to maximizing $L(\theta)$ because applying $g$ is an inequality preserving operation.
 
