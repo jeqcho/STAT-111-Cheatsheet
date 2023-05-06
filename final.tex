@@ -896,7 +896,7 @@ $$
     \item Find a test statistic $T(\mathbf{X}, \mathbf{Y})$ such that large values of $T$ are evidence against $H_0$ (e.g., $T(\mathbf{X}, \mathbf{Y})=|\bar{Y}-\bar{X}|)$
     \item Compute observed $t_0=T(\mathbf{X}=\mathbf{x}, \mathbf{Y}=\mathbf{y})$ from data.
     \item Compute $T$ from each permutation of $\left(x_1, \ldots, x_m, y_1, \ldots, y_n\right)$ to get values $t_1, \ldots, t_{(m+n) !}$
-    \item P-value is the proporition of times that $t$ was at least as extreme as $t_0$.
+    \item P-value is the proportion of times that $t$ was at least as extreme as $t_0$.
     $$
     p=P\left(T \geq t_0\right)=\frac{1}{(m+n) !} \sum_{i=1}^{(m+n) !} I_{t_i \geq t_0}
     $$
@@ -1046,7 +1046,7 @@ $$\E[g(X)]=\int g(x)f_X(x)~dx$$
 
 
 \textbf{Variance}
-$$\Var(X)=\E[(X-\E[X])^2]=\E[X^2-(E[X])^2]$$
+$$\Var(X)=\E[(X-\E[X])^2]=\E(X^2)-(E[X])^2$$
 
 \textbf{Covariance}
 $$\Cov(X,Y)=\E[(X-\E[X])(Y-\E[Y])]=\E(XY)-\E(X)\E(Y)$$
