@@ -217,8 +217,6 @@ If $Y\sim F$, the $r$th \emph{quantile} is $Q(r)=\min\{ x\mid F(x)\geq r\}$. The
 
 \section{MLE and MOM}
 
-\subsection{Finding the MLE}
-
 \subsection{MLE Invariance}
 If $g$ is injective and $\hat\theta$ is the MLE of $\theta$, then $g(\hat\theta)$ is the MLE of $g(\theta)$. After all, maximizing $L(\psi)$ is equivalent to maximizing $L(\theta)$ because applying $g$ is an inequality preserving operation.
 
@@ -296,7 +294,12 @@ $$
 $$
 
 \subsection{Law of Large Numbers}
-Let $Y_1,\dots,Y_n$ be i.i.d. random variables with finite first moments, i.e. $\E (|Y_1|)<\infty$. Then, SLLN says $\bar{Y}\xrightarrow{a} \E (Y_1)$ and WLLN says $\bar{Y}\xrightarrow{p} \E (Y_1$). Similar to CLT we have for general moments
+Let $Y_1,\dots,Y_n$ be i.i.d. random variables with finite first moments, i.e. $\E (|Y_1|)<\infty$. Then, 
+\begin{itemize}
+    \item SLLN $\bar{Y}\xrightarrow{a} \E (Y_1)$
+    \item WLLN $\bar{Y}\xrightarrow{p} \E (Y_1)$
+\end{itemize}
+Similar to CLT we have for general moments
 $$
 \overline{Y^k}\xrightarrow{p}\E[Y_1^k]
 $$
@@ -495,7 +498,7 @@ For the model $Y_j=\theta X_j+U_j$, the \emph{least squares estimator} for $\the
 
 \subsection{Logistic Regression}
 Logistic regression says that the probability of success
-is a logistic function of $(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)$, with $\theta= (\theta_0, \dots, \theta_K)$. In other words, we have the model $$\PP(Y=1\mid X=x,\theta)=\frac{\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}{1+\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}.$$ Recall that the logit function is $\logit(r)=\log \frac{r}{1-r}$. Then, the logistic function is $\logit^{-1}(r)= \exp(r)/(1+\exp(r))$. This is also known as the sigmoid curve.
+is a logistic function of $(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)$, with $\theta= (\theta_0, \dots, \theta_K)$. In other words, we have the model $$P(Y=1\mid X=x,\theta)=\frac{\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}{1+\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}.$$ Recall that the logit function is $\logit(r)=\log \frac{r}{1-r}$. Then, the logistic function is $\logit^{-1}(r)= \exp(r)/(1+\exp(r))$. This is also known as the sigmoid curve.
 
 \subsection{Descriptive Regression}
 Descriptive regression is interested
