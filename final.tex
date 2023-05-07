@@ -281,7 +281,7 @@ If we make no assumptions about the bias of $\hat{\theta}$ for $\theta$, we inst
 
 \subsection{Convergence Equivalence}
 $Y_n\xrightarrow{p}Y$ (in probability) implies $Y_n\xrightarrow{d}Y$ (in distribution).
-Given a constant $c$, and r.v. $Y_n$, we have $Y_n\xrightarrow{p}c$ implies $Y_n\xrightarrow{d}c$.
+Given a constant $c$, and r.v. $Y_n$, we have $Y_n\xrightarrow{d}c$ implies $Y_n\xrightarrow{p}c$.
 
 \subsection{Central Limit Theorem}
 Let $Y_1,\dots,Y_n$ be i.i.d random variables with mean $\E (Y_1) =\mu$ and finite variance $\Var( Y_1)=\sigma^2<\infty$. Then, the convergence $$\frac{\sqrt{n}(\bar{Y}-\mu)}{\sigma}\xrightarrow{d} \cN(0,1)$$ holds. Equivalently, we have $\sqrt{n}(\bar{Y}-\mu)\xrightarrow{d} \cN(0,\sigma^2)$ or $\bar{Y} \mathrel{\dot{\sim}}\cN(\mu,\sigma^2/n)$.
@@ -943,7 +943,7 @@ The \textit{population quantity}, $\E(\tau_1)$ is the causal quantity for all un
     We assume a statistical model where $(W_j, Y_j)$ are i.i.d. across $j$, and we assume that the study is randomized, then we can define $$p_{ik} = P(Y_1(0) = i, Y_1(1) = k), i, k \in \{0, 1\}$$
 
     Then, we can express the average treatment effect of the population as:
-    $$\E(\tau_j) = \E(Y_j(1)-Y_j(0)) = (p_{01}-p_{11})-(p_{10}+p_{11}) =p_{01} -p_{10} $$
+    $$\E(\tau_j) = \E(Y_j(1)-Y_j(0)) = (p_{01}+p_{11})-(p_{10}+p_{11}) =p_{01} -p_{10} $$
     $$\Var(\tau_j) = \E(\tau_j^2) - (\E(\tau_j))^2 = (p_{01} + p_{10}) - (p_{01}+p_{10})^2$$
 
 
