@@ -379,7 +379,7 @@ Use the CLT to find an asymptotic $\cN(0,1)$ pivot. When this pivot is not nice 
 
 \textbf{Example:} Let $Y_1,\ldots,Y_n\sim \Expo(\lambda)$. By the CLT,
 $$
-\frac{\sqrt{n}(\bar Y-1/\lambda)}{\sqrt{1/\lambda^2}}\xrightarrow{d}\cN(0,1)\implies \sqrt{n}(\bar Y\lambda-1)\sim\cN(0,1)
+\frac{\sqrt{n}(\bar Y-1/\lambda)}{\sqrt{1/\lambda^2}}\xrightarrow{d}\cN(0,1)\implies \sqrt{n}(\bar Y\lambda-1)\xrightarrow{d}\cN(0,1)
 $$
 With $n$ large we can move $n$ around and have the approximate interval
 $$
@@ -387,7 +387,7 @@ $$
 $$
 
 \textbf{A useful shortcut}
-Finally, we look at the asymptotic $95\%$ CI that you will end up using $95\%$ of the time. For i.i.d. $Y_1,\dots,Y_n\sim [\theta,\sigma^2]$, with $\sigma^2$ known, we have $$\sqrt{n}(\bar{Y}-\theta)\to_\mathcal{D}\cN(0,\sigma^2)$$ by the CLT. Then, an asymptotic $95\%$ CI for $\theta$ is $$\brac{\bar{y}-\frac{1.96\sigma}{\sqrt{n}},\bar{y}+\frac{1.96\sigma}{\sqrt{n}}},$$ where $\bar{y}$ is just the crystallized version of the sample mean random variable $\bar{Y}$ (CIs can be estimators or estimates depending on context).
+Finally, we look at the asymptotic $95\%$ CI that you will end up using $95\%$ of the time. For i.i.d. $Y_1,\dots,Y_n\sim [\theta,\sigma^2]$, with $\sigma^2$ known, we have $$\sqrt{n}(\bar{Y}-\theta)\xrightarrow{d}\cN(0,\sigma^2)$$ by the CLT. Then, an asymptotic $95\%$ CI for $\theta$ is $$\brac{\bar{y}-\frac{1.96\sigma}{\sqrt{n}},\bar{y}+\frac{1.96\sigma}{\sqrt{n}}},$$ where $\bar{y}$ is just the crystallized version of the sample mean random variable $\bar{Y}$ (CIs can be estimators or estimates depending on context).
 
 \section{Sufficient statistics and EFs}
 
