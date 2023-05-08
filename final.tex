@@ -212,6 +212,8 @@ An estimator $\hat{\theta}$ is said to be \emph{consistent} for the estimand $\t
 \item Empirical CDF: $\hat{F}_n(x)=\frac{1}{n} \sum_{j=1}^n I\left(x_j \leq x\right)$
  
 \end{itemize}
+Sample mean and sample variance are unbiased, while sample standard deviation is biased.
+
 \textbf{Sample Quantile}
 If $Y\sim F$, the $r$th \emph{quantile} is $Q(r)=\min\{ x\mid F(x)\geq r\}$. Then, for i.i.d. random variables $Y_1,\dots,Y_n$, one can consider the order statistics $Y_{(1)},\dots,Y_{(n)}$, and the $r$th \emph{sample quantile} is $\hat Q(r)=Y_{(\lceil nr \rceil)}$. The sample median is thus $\hat Q(0.5)=Y_{(\lceil n/2 \rceil)}$.
 
