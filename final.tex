@@ -478,7 +478,7 @@ $$\mu(\vec{x})=\E (Y\mid \vec{X}=\vec{x},\vec{\theta})=\theta_0+\theta_1x_1+\cdo
 
 where $\vec{\theta}=(\theta_0,\ldots,\theta_k)^T$. The task is now to estimate $\vec{\theta}$. Linear as in parameters, not predictors (e.g. $\theta_1 x_1 x_2$ or $\theta_1 x_1^2$ are ok).
 
-\textbf{Homoskedasticity} is when we assume $\Var (U_j\mid \vec{X}={x})=\sigma^2$ for all $j$. If the variance is different for each $j$, we say that the data exhibits \emph{heteroskedasticity}.
+\textbf{Homoskedasticity} is when we assume $\Var (U_j\mid \vec{X}={\vec x})=\sigma^2$ for all $j$. If the variance is different for each $j$, we say that the data exhibits \emph{heteroskedasticity}.
 
 \textbf{Residual} is the difference between the true value and its predicted value (here we write for the $j$th data point):
 $$\hat{U}_j=Y_j-\hat{\vec\theta}\vec x_j.$$
@@ -492,15 +492,14 @@ For continuous data, the joint density for the outcomes conditioned on the predi
 
 \textbf{A Gaussian Example}
 
-Suppose, for this example, that we have one predictor and no intercept. For this Gaussian linear regression, suppose also that the noise is distributed as \emph{independent} Normals; that is, we have $Y_j\mid X_j=x_j,\theta \sim \cN(\theta x_j,\sigma^2)$. Then, we obtain the MLE $$\hat{\theta}=\frac{\sum_{j=1}^n x_jY_j}{\sum_{j=1}^n x_j^2}.$$ Check that $\hat{\theta}$ is conditionally unbiased and conditionally achieves the CRLB. Note also that under different assumptions (homo/hetero-skedasticity), even if we use the same MLE, the standard error of the estimator would be different.
+Suppose, for this example, that we have one predictor and no intercept. For this Gaussian linear regression, suppose also that the noise is distributed as \emph{independent} Normals; that is, we have $Y_j\mid (X_j=x_j,\theta) \sim \cN(\theta x_j,\sigma^2)$. Then, we obtain the MLE $$\hat{\theta}=\frac{\sum_{j=1}^n x_jY_j}{\sum_{j=1}^n x_j^2}.$$ Check that $\hat{\theta}$ is conditionally unbiased and conditionally achieves the CRLB. Note also that under different assumptions (homo/hetero-skedasticity), even if we use the same MLE, the standard error of the estimator would be different.
 
 \textbf{Least Squares Regression}
 
 For the model $Y_j=\theta X_j+U_j$, the \emph{least squares estimator} for $\theta$ is given by $$\hat{\theta}_{LS}=\argmin_\theta \sum_{j=1}^n (Y_j-\theta x_j)^2=\frac{\sum_{j=1}^n x_jY_j}{\sum_{j=1}^n x_j^2}.$$ For Gaussian linear regression, the MLE coincides with the least squares estimator, and in fact, the MoM estimator also coincides with the least squares estimator. In general, $\hat\theta_{LS}=\hat\theta_{MLE}$ for homscedastic Normal errors.
 
 \subsection{Logistic Regression}
-Logistic regression says that the probability of success
-is a logistic function of $(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)$, with $\theta= (\theta_0, \dots, \theta_K)$. In other words, we have the model $$P(Y=1\mid X=x,\theta)=\frac{\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}{1+\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}.$$ Recall that the logit function is $\logit(r)=\log \frac{r}{1-r}$. Then, the logistic function is $\logit^{-1}(r)= \exp(r)/(1+\exp(r))$. This is also known as the sigmoid curve.
+If $Y$ is binary (either 1 or 0), logistic regression says that the probability of success is a logistic function of $(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)$, with $\vec \theta= (\theta_0, \dots, \theta_K)$. In other words, we have the model $$P(Y=1\mid X=x,\vec \theta)=\frac{\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}{1+\exp(\theta_0 + \theta_1 x_1 +\cdots + \theta_K x_K)}.$$ Recall that the logit function is $\logit(r)=\log \frac{r}{1-r}$. Then, the logistic function is $\logit^{-1}(r)= \exp(r)/(1+\exp(r))$. This is also known as the sigmoid curve.
 
 \subsection{Descriptive Regression}
 Descriptive regression is interested
@@ -829,7 +828,7 @@ A SRS without replacement of size $n$ from a total population of size $N$ is a r
 
 Divide the population into $L$ strata such that $\sum_{\ell=1}^LN_\ell=N$ where the $N_\ell$ are known, and let $\mu_\ell$ and $\sigma_\ell^2$ be the mean and variance of stratum $\ell$. Take a sample of $n_\ell$ from stratum $\ell$ for each $\ell$. Sampling can be carried out with replacement in each stratum, or without replacement in each stratum. For SRS within each stratum without replacement, we get the estimator for population mean
 $$
-\hat\mu=\sum_{i=\ell}^L\frac{N_\ell}{N }\bar Y_\ell
+\hat\mu=\sum_{\ell=1}^L\frac{N_\ell}{N }\bar Y_\ell
 $$
 This estimator is unbiased ($\E[\hat\mu]=\mu$) and has the variance
 $$
@@ -868,6 +867,7 @@ Here are the general steps you would need to conduct a non-parametric bootstrap.
     \item The mean of this distribution is an estimate of the population statistic, and the standard deviation can be used to create confidence intervals.
     \item The standard error of $\hat{\theta}$ can be calculated from the sample standard deviation of the bootstrap estimates.
     $$\widehat{\text{SE}(\hat \theta)} =\sqrt{\frac{1}{B-1} \sum_{b=1}^{B}(\hat{\theta_b^*} - \bar{\hat{\theta^*}})^2}, \text{ where } \bar{\hat{\theta^*}} = \frac{1}{B} \sum_{b=1}^{B} \hat{\theta_b^*}$$
+    The bootstrap estimate of bias is $\widehat{\Bias(\hat\theta)}=\bar{\hat{\theta^*}}-\hat\theta$.
 \end{enumerate}
 For a parametric bootstrap, instead of SRS with replacement, generate the bootstrap samples using the estimate of the parameter in a distribution. e.g. if the data is from $\Pois(\lambda)$ and we have an estimate $\hat\lambda$, generate the bootstrap samples from $\Pois(\hat\lambda)$.
 
